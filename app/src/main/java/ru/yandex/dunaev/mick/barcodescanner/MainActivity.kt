@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                 onCaptureComplete = this@MainActivity::onCaptureComplete
             })
             R.id.barcode_id -> setFragment(BarcodeFragment())
+            R.id.barcode_list_id -> setFragment(BarcodeListFragment())
         }
         return true
     }

@@ -10,4 +10,5 @@
     <string name="marker_text">marker</string>
     <string name="question_text">question image</string>
     <string name="no_barcode_detected_text">No barcode detected</string>
+    <string name="barcodes">Barcodes</string>
 </resources>

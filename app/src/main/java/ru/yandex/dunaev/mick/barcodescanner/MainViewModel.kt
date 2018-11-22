@@ -14,6 +14,9 @@ class MainViewModel: ViewModel() {
     val progress = ObservableBoolean(false)
     val isBarcode = ObservableBoolean(false)
 
+    val adapter = ObservableField<BarcodeAdapter>(BarcodeAdapter())
+    val list = ObservableField<List<Barcode>>()
+
     fun setImage(bitmap: Bitmap?) {
         isBarcode.set(false)
         image.set(bitmap)
@@ -38,14 +41,16 @@ class MainViewModel: ViewModel() {
         }
         val markedBitmap = image.get()?.copy(Bitmap.Config.ARGB_8888, true)
         markedBitmap?: return
+        val listBarcodes = mutableListOf<Barcode>()
         val canvas = Canvas(markedBitmap)
         val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = Color.parseColor("#99003399") }
         result.forEach {
             val boundingBox = it.boundingBox
             if(boundingBox != null) canvas.drawRect(boundingBox, paint)
+            listBarcodes.add(Barcode(it))
         }
         image.set(markedBitmap)
+        list.set(listBarcodes.toList())
     }
-
 }
 
