@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">BarcodeScanner</string>
+    <string name="scan_barcode">Scan barcode</string>
+    <string name="information">Information</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="capture_image">capture image</string>
+    <string name="image_view">image view</string>
+    <string name="marker_text">marker</string>
+    <string name="question_text">question image</string>
+    <string name="no_barcode_detected_text">No barcode detected</string>
+</resources>
